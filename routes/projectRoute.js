@@ -7,7 +7,7 @@ router.get("/", getAllProjects);
 
 // Create a project
 router.get("/add-project", isLoggedIn,(req, res) => {
-  res.render("Layouts/add.ejs");
+  res.render("layouts/add.ejs");
 });
 router.post("/", isLoggedIn,createProject);
 
