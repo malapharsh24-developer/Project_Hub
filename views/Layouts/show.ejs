@@ -1,0 +1,30 @@
+<% layout("./Boilerplate.ejs") %>
+<body>
+  
+    <div class="row m-3">
+        <div class="card col-6 offset-3">
+          <h5 class="card-title"><%= project.title %></h5>
+    <img src="<%= project.image %>" class="card-img-top mb-3" height="200rem" width="20rem" alt="..." />
+    <div class="card-body">
+      <p class="card-text mb-1">
+        <span class="text-primary">Published by :</span> <em><strong><%= project.owner.username %></strong></em>
+      </p>
+      <p class="card-text mb-2">
+        <span class="text-primary">Description :</span>
+        <%= project.description %>
+      </p>
+      <p class="card-text mb-1">
+        <span class="text-primary">Uploaded on : </span><small class="text-body-secondary"><%= project.createdAt.toString().split(" ").slice(0,4).join(" ") %></small>
+      </p>
+      <p class="card-text">
+        <span class="text-primary me-2">Github link : </span><a href="<%= project.github %>" class="fs-6"><i class="fa-brands fa-github" ></i></a>
+    </div>
+    <div class="btn-section ">
+      <a href="/projects/<%= project._id %>/edit"><button class="btn btn-primary">Edit</button></a>
+      <form action="/projects/<%= project._id %>?_method=DELETE" method="POST">
+        <button type="submit" class="btn btn-dark">Delete</button>
+      </form>
+    </div>
+  </div>
+    </div>
+</body>

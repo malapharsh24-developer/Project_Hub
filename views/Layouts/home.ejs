@@ -1,0 +1,22 @@
+<% layout("./Boilerplate.ejs") %>
+<body>
+  <!-- Project Cards -->
+  <div class="container">
+    <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-1">
+      <% for(let project of projects) { %>
+      <div class="card m-3" style="width: 13rem">
+        <img
+          src="<%= project.image %>"
+          class="card-img-top"
+          height="100rem"
+          alt="..."
+        />
+        <div class="card-body">
+          <h2 class="card-text"> <%= project.title %> </h2><br>
+          <a href="/projects/<%= project._id %>">Click here to view more</a>
+        </div>
+      </div>
+      <% } %>
+    </div>
+  </div>
+</body>

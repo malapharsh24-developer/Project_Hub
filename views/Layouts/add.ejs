@@ -1,0 +1,67 @@
+<% layout("./Boilerplate.ejs") %>
+
+<div class="row">
+  <form action="/projects" method="POST" class="col-6 offset-3 mt-2 add-form needs-validation" novalidate>
+    <h4><span class="text-primary mb-2">Add</span> New Project</h4>
+    <hr />
+    <div class="mb-2">
+      <label for="title" class="form-label mb-1">Title</label>
+      <input
+        type="text"
+        class="form-control"
+        name="projects[title]"
+        placeholder="Enter the title ..."
+        required
+      />
+      <div class="valid-feedback">
+        Good title
+      </div>
+      <div class="invalid-feedback">
+        Title is required
+      </div>
+    </div>
+    <div class="mb-2">
+      <label for="description" class="form-label mb-1">Description</label>
+      <textarea
+        class="form-control"
+        name="projects[description]"
+        placeholder="Enter the description ..."
+        rows="5"
+        required
+      ></textarea>
+      <div class="invalid-feedback">
+        Description is required
+      </div>
+    </div>
+    <div class="row row-cols-lg-2 mb-3 row-cols-md-1">
+      <div class="mb-2">
+        <label for="image" class="form-label mb-1">Image URL</label>
+        <input
+          type="text"
+          class="form-control"
+          name="projects[image]"
+          placeholder="Enter the image URL ..."
+        />
+        <div class="invalid-feedback">
+          Image URL is required (Optional field)
+        </div>
+      </div>
+      <div class="mb-2">
+        <label for="github" class="form-label mb-1">GitHub Link</label>
+        <input
+          type="text"
+          class="form-control"
+          name="projects[github]"
+          placeholder="Enter the project GitHub link ..."
+          required
+        />
+        <div class="invalid-feedback">
+          GitHub link is required
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary mb-3">Upload Project</button>
+  </form>
+</div>
+
+

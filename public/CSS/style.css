@@ -1,0 +1,79 @@
+body{
+    overflow-x: hidden;
+}
+
+a{
+    color : #000 !important;
+    text-decoration: none !important;
+    transition: all 0.3s;
+}
+a:hover{
+    color : #0D6EFD !important;
+}
+button{
+    font-size: 0.75rem !important;
+    display: inline-block;
+    min-width: 4rem;
+    padding: 0.15rem 0.5rem !important;
+}
+.navbar{
+    font-size : 0.85rem;
+    position: sticky !important;
+    min-width: 100% !important;
+    top : 0 !important;
+    z-index: 10 !important;
+}
+.navbar > form{
+    font-size : 0.85rem;
+}
+.navbar-brand{
+    font-size: 1.25rem !important;
+    font-weight: 700;
+}
+.nav-item a:active{
+    color : rgb(23, 62, 255);
+}
+.auth-btns{
+    margin: 0 10rem;
+    display: flex;
+    gap: 1rem;
+}
+
+/* CARD styling */
+.card {
+    border : none !important;
+    font-size: 0.7rem !important;
+}
+.card-img-top{
+    border-radius: 0.2rem;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+.card-body{
+    padding: 0 !important;
+    & h2{
+        font-size: 0.75rem;
+        display: inline-block !important; 
+        margin: 0.3rem 0 0 0 !important;
+        font-weight: 600 !important;
+    }
+}
+
+.btn-section{
+    display: flex;
+    justify-content: center;
+    gap : 1rem;
+    margin: 1rem auto;
+}
+
+/* FORM STYLING */
+
+label, input, textarea,::placeholder{
+    font-size: 0.85rem !important;
+}
+input {
+    padding: 0.25rem 0.6rem !important;
+}
+textarea{
+    resize: none !important;
+}

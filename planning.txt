@@ -1,0 +1,54 @@
+Projects Upload and search app
+
+# Overall Structure : 
+ > User can view, add, edit, delete project details
+ > Search option : by titlea
+
+# Routes 
+- For Projects  
+    1. /projects , GET
+    -> to display all projects
+
+    2. /projects , POST  
+    -> to create new project card
+
+    3. /project/:id , GET
+    -> to view project details matching with id
+
+    4. /project/:id , PUT
+    -> to edit project details
+
+    5. /projects/:id , DELETE
+    -> To delete project 
+
+- Authenication
+    1. /signup , POST
+    -> to register user
+
+    2. /login , POST 
+    -> to login user
+
+    3. /logout , GET
+    -> to end session of loggedin user and require login again
+
+- Authorization
+    1. Only user who created can edit, delete project
+    2. Only loggedIn user can add new Project
+
+
+# Models 
+    1. User
+        {
+            username : String, required,
+            email : String, required,
+            password : String, required,
+        }
+    2. Project 
+        {
+            title : String, required
+            description : String, required,
+            createdAt : Date.now(),
+            image : String, imageUrl, default ,
+            github : String, required ( github url)
+            owner : ref("User")
+        }
