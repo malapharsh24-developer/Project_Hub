@@ -41,6 +41,23 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(methodOverride("_method"));
+// -----------------------------
+const fs = require("fs");
+
+app.get("/__debug", (req, res) => {
+  const layoutPath = path.join(__dirname, "views", "boilerplate.ejs");
+  const layoutExists = fs.existsSync(layoutPath);
+  const includesPath = path.join(__dirname, "views", "includes", "navbar.ejs");
+  const includesExists = fs.existsSync(includesPath);
+  const homeView = path.join(__dirname, "views", "layouts", "home.ejs");
+  const homeExists = fs.existsSync(homeView);
+  res.json({
+    "boilerplate.ejs exists": layoutExists,
+    "navbar.ejs exists": includesExists,
+    "home.ejs exists": homeExists
+  });
+});
+// --------------------------------------
 
 // ROUTES
 app.get("/", (req, res) => {
