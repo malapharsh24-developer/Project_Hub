@@ -55,6 +55,9 @@ app.use((req, res, next) => {
   next();
 });
 
+app.get("/test", (req, res) => {
+  res.render("test");
+});
 // Project routes
 app.use("/projects", projectRoutes);
 //User routes 
