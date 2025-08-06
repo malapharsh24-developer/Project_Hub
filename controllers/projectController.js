@@ -4,14 +4,14 @@ const Project = require("../models/projectModel");
 const getAllProjects = async (req, res) => {
   const projects = await Project.find();
   console.log(projects.length);
-  res.render("Layouts/home.ejs", { projects });
+  res.render("layouts/home", { projects });
 }
 
 const createProject = async (req, res, next) => {
   try {
     const { projects } = req.body;
     const newProject = new Project({ ...projects, owner: req.user._id });
-    newProject.save().then((result) => {
+    await newProject.save().then((result) => {
       console.log("Newly added project \n", result);
     });
     res.redirect("/projects");
@@ -24,7 +24,7 @@ const showProject = async (req, res, next) => {
   try {
     const { id } = req.params;
     const project = await Project.findById(id).populate('owner');
-    res.render("Layouts/show.ejs", { project });
+    res.render("layouts/show", { project });
   } catch (err) {
     next(err);
   }
@@ -34,7 +34,7 @@ const renderEdit = async (req, res, next) => {
   try {
     let { id } = req.params;
     let project = await Project.findById(id);
-    res.render("Layouts/edit.ejs", { project });
+    res.render("layouts/edit", { project });
   } catch (err) {
     next(err);
   }

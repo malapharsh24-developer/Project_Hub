@@ -5,7 +5,7 @@ const passport = require("passport");
 
 // /signup | GET
 router.get("/signup", (req, res)=>{
-    res.render("Layouts/signup.ejs")
+    res.render("layouts/signup.ejs")
 });
 // /signup | POST
 router.post("/signup", handleSignUp);
@@ -13,7 +13,7 @@ router.post("/signup", handleSignUp);
 
 // /login | GET
 router.get("/login", (req, res)=>{
-    res.render("Layouts/login.ejs")
+    res.render("layouts/login.ejs")
 });
 // /login | POST
 router.post("/login", passport.authenticate('local', { successRedirect: '/projects',failureRedirect : '/user/login'}),handleLogin);

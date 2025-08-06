@@ -44,7 +44,7 @@ app.use(methodOverride("_method"));
 
 // ROUTES
 app.get("/", (req, res) => {
-  res.send("Root ");
+  res.redirect("/projects");
 });
 
 
